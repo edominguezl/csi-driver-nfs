@@ -6,22 +6,22 @@ metadata:
 spec:
   generators:
     - git:
-        repoURL: https://your.git.repo/your-git-repo.git
+        repoURL: https://github.com/edominguezl/csi-driver-nfs.git
         revision: HEAD
         directories:
-          - path: nfs-csi
+          - path: csi-driver-nfs
   template:
     metadata:
       name: '{{path.basename}}'
     spec:
       project: default
       source:
-        repoURL: https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner
-        chart: nfs-subdir-external-provisioner
-        targetRevision: 4.0.18  # Ajusta según versión deseada
+        repoURL: https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/charts
+        chart: csi-driver-nfs
+        targetRevision: 4.9.0  # ← ajusta según la versión deseada
         helm:
           valueFiles:
-            - values.yaml
+            - csi-driver-nfs/values.yaml  # ← si lo tienes en Git (usa Git generator), o usa "values" inline
       destination:
         server: https://kubernetes.default.svc
         namespace: kube-system

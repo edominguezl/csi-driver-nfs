@@ -1,0 +1,7 @@
+csi-driver-nfs:
+  kubeletDir: /var/snap/microk8s/common/var/lib/kubelet
+ 
+storageClass:
+  parameters:
+    server: 192.168.64.6
+    share: "/srv/nfs/shared"
