@@ -5,14 +5,12 @@ metadata:
   namespace: argocd
 spec:
   generators:
-    - git:
-        repoURL: https://github.com/edominguezl/csi-driver-nfs.git
-        revision: HEAD
-        directories:
-          - path: csi-driver-nfs
+    - list:
+        elements:
+          - name: csi-driver-nfs
   template:
     metadata:
-      name: '{{path.basename}}'
+      name: '{{name}}'
     spec:
       project: default
       source:
