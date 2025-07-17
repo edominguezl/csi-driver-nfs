@@ -8,25 +8,21 @@ spec:
         repoURL: https://github.com/edominguezl/csi-driver-nfs.git
         revision: HEAD
         directories:
-          - path: csi-driver-nfs/charts
-    - clusters:
-        selector:
-          matchLabels:
-            deploy-csi-driver: "true"
+          - path: csi-driver-nfs
   template:
     metadata:
-      name: '{{name}}-csi-driver-nfs'
+      name: in-cluster-csi-driver-nfs
     spec:
       project: default
       source:
         repoURL: https://github.com/edominguezl/csi-driver-nfs.git
         targetRevision: HEAD
-        path: csi-driver-nfs/charts
+        path: csi-driver-nfs
         helm:
           valueFiles:
             - values.yaml
       destination:
-        server: '{{server}}'
+        server: https://kubernetes.default.svc
         namespace: kube-system
       syncPolicy:
         automated:
