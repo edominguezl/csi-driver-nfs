@@ -3,6 +3,7 @@ image:
         repository: registry.k8s.io/sig-storage/livenessprobe
         tag: v2.13.1
         pullPolicy: IfNotPresent
+
 csi-driver-nfs:
   kubeletDir: /var/snap/microk8s/common/var/lib/kubelet
   image: v4.9.0
