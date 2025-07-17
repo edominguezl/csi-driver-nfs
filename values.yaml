@@ -1,8 +1,11 @@
 image:
-    livenessProbe:
-        repository: registry.k8s.io/sig-storage/livenessprobe
-        tag: v2.13.1
-        pullPolicy: IfNotPresent
+  repository: k8s.gcr.io/csi/nfsplugin
+  tag: v4.9.0
+  pullPolicy: IfNotPresent
+  livenessProbe:
+      repository: registry.k8s.io/sig-storage/livenessprobe
+      tag: v2.13.1
+      pullPolicy: IfNotPresent
 
 csi-driver-nfs:
   kubeletDir: /var/snap/microk8s/common/var/lib/kubelet
