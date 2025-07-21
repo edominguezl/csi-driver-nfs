@@ -1,6 +1,5 @@
 csi-driver-nfs:
   kubeletDir: /var/snap/microk8s/common/var/lib/kubelet
-  image: v4.9.0
 
 storageClass:
   parameters:
