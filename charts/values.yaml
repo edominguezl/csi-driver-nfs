@@ -3,7 +3,7 @@ csi-driver-nfs:
 
 storageClass:
   parameters:
-    server: 192.168.64.6
+    server: 192.168.64.8
     share: /srv/nfs/shared
   name: nfs-csi
   default: true
