@@ -16,7 +16,7 @@ spec:
       source:
         repoURL: https://github.com/edominguezl/csi-driver-nfs.git
         targetRevision: HEAD
-        path: csi-driver-nfs/charts/
+        path: charts/
         helm:
           valueFiles:
             - values.yaml
